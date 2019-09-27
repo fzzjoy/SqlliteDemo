@@ -1,0 +1,2 @@
+# SqlliteDemo
+Qt Sqllite Demo
