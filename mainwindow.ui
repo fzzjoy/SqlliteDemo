@@ -18,12 +18,12 @@
     <item>
      <layout class="QVBoxLayout" name="verticalLayout" stretch="5,0,0">
       <item>
-       <widget class="LoginRegisterWidget" name="widget" native="true"/>
+       <widget class="LoginRegisterWidget" name="loginRegisterWidget" native="true"/>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QCommandLinkButton" name="commandLinkButton">
+         <widget class="QCommandLinkButton" name="registerCmdLinkButton">
           <property name="text">
            <string>注册</string>
           </property>
@@ -47,7 +47,7 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
-         <widget class="QCommandLinkButton" name="commandLinkButton_2">
+         <widget class="QCommandLinkButton" name="searchCmdLinkButton">
           <property name="text">
            <string>查找</string>
           </property>

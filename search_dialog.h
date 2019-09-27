@@ -1,5 +1,4 @@
-#ifndef SEARCH_DIALOG_H
-#define SEARCH_DIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -16,7 +15,8 @@ public:
     ~SearchDialog();
 
 private:
+    void showEvent(QShowEvent *event);
+
     Ui::SearchDialog *ui;
 };
 
-#endif // SEARCH_DIALOG_H

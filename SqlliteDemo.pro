@@ -16,6 +16,8 @@ else:win32:CONFIG(debug, debug|release): DESTDIR += $$PWD/debug/win32
 else:unix:!macx:CONFIG(release, debug|release): DESTDIR += $$PWD/release/linux_x86_64
 else:unix:!macx:CONFIG(debug, debug|release): DESTDIR += $$PWD/debug/linux_x86_64
 
+CONFIG += c++14
+
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
@@ -32,12 +34,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     login_register_widget.cpp \
-    search_dialog.cpp
+    search_dialog.cpp \
+    utils.cpp
 
 HEADERS += \
         mainwindow.h \
     login_register_widget.h \
-    search_dialog.h
+    search_dialog.h \
+    utils.h
 
 FORMS += \
         mainwindow.ui \

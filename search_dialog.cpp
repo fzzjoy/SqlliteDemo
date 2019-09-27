@@ -12,3 +12,8 @@ SearchDialog::~SearchDialog()
 {
     delete ui;
 }
+
+void SearchDialog::showEvent(QShowEvent *event)
+{
+    Q_UNUSED(event);
+}

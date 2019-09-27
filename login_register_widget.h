@@ -1,5 +1,4 @@
-#ifndef LOGIN_REGISTER_WIDGET_H
-#define LOGIN_REGISTER_WIDGET_H
+#pragma once
 
 #include <QWidget>
 
@@ -15,11 +14,22 @@ public:
     explicit LoginRegisterWidget(QWidget *parent = 0);
     ~LoginRegisterWidget();
 
+    enum class WorkMode {
+        LOGIN_MODE = 0,
+        REGISTER_MODE,
+    };
+
+    void setWork_mode(const WorkMode &value);
+
 private slots:
     void on_loginRegisterPushButton_clicked();
 
 private:
+    void onLogin(const QString &user_name, const QString &user_passwd);
+    void onRegister(const QString &user_name, const QString &user_passwd);
+
     Ui::LoginRegisterWidget *ui;
+    WorkMode                work_mode = WorkMode::LOGIN_MODE;
+
 };
 
-#endif // LOGIN_REGISTER_WIDGET_H
