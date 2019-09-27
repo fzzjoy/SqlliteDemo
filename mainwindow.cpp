@@ -15,8 +15,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     login_register_widget_ = make_unique<LoginRegisterWidget>();
     login_register_widget_->setWork_mode(LoginRegisterWidget::WorkMode::REGISTER_MODE);
-
-    search_dialog_ = make_unique<SearchDialog>();
 }
 
 MainWindow::~MainWindow()
@@ -48,6 +46,7 @@ void MainWindow::showEvent(QShowEvent *event)
     {
         qDebug() << "create table success" << endl;
     }
+    search_widget_ = make_unique<SearchWidget>(database_);
 }
 
 bool MainWindow::createTable(const QString &name)
@@ -81,5 +80,8 @@ void MainWindow::on_registerCmdLinkButton_clicked()
 
 void MainWindow::on_searchCmdLinkButton_clicked()
 {
-    search_dialog_->show();
+    if(search_widget_ != nullptr)
+    {
+        search_widget_->show();
+    }
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "search_dialog.h"
+#include "search_widget.h"
 #include "login_register_widget.h"
 #include <QMainWindow>
 #include <QSqlDatabase>
@@ -32,6 +32,6 @@ private:
 
     QSqlDatabase                            database_;
     std::unique_ptr<LoginRegisterWidget>    login_register_widget_ = nullptr;
-    std::unique_ptr<SearchDialog>           search_dialog_ = nullptr;
+    std::unique_ptr<SearchWidget>           search_widget_ = nullptr;
 };
 

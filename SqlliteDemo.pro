@@ -34,16 +34,16 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     login_register_widget.cpp \
-    search_dialog.cpp \
-    utils.cpp
+    utils.cpp \
+    search_widget.cpp
 
 HEADERS += \
         mainwindow.h \
     login_register_widget.h \
-    search_dialog.h \
-    utils.h
+    utils.h \
+    search_widget.h
 
 FORMS += \
         mainwindow.ui \
     login_register_widget.ui \
-    search_dialog.ui
+    search_widget.ui
