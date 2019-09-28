@@ -49,7 +49,7 @@
         <item>
          <widget class="QCommandLinkButton" name="searchCmdLinkButton">
           <property name="text">
-           <string>查找</string>
+           <string>管理</string>
           </property>
          </widget>
         </item>
