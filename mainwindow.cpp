@@ -28,7 +28,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::showEvent(QShowEvent *event)
 {
-    Q_UNUSED(event);
+    Q_UNUSED(event)
     database_ = QSqlDatabase::addDatabase(kDbDriver);
     database_.setDatabaseName(kDbName);
     if(!database_.open())

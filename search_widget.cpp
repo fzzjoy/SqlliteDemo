@@ -22,7 +22,7 @@ SearchWidget::~SearchWidget()
 
 void SearchWidget::showEvent(QShowEvent *event)
 {
-    Q_UNUSED(event);
+    Q_UNUSED(event)
 
     model_->setTable(kTableName);
     model_->setEditStrategy(QSqlTableModel::OnManualSubmit);
@@ -72,14 +72,20 @@ void SearchWidget::on_savePushButton_clicked()
 
 void SearchWidget::on_deletePushButton_clicked()
 {
+    QItemSelectionModel *selections = ui->userTableView->selectionModel();
+    QModelIndexList selected = selections->selectedIndexes();
+    if(selected.size() == 0)
+    {
+        QMessageBox::warning(this, tr("错误提示"), tr("请先选中要删除的记录"), QMessageBox::Ok | QMessageBox::Default, 0);
+        return;
+    }
+
     QMessageBox::StandardButton reply = QMessageBox::question(this, tr("提示"), tr("确定删除选中记录?"), QMessageBox::Yes | QMessageBox::No);
     if (reply == QMessageBox::No)
     {
         return;
     }
 
-    QItemSelectionModel *selections = ui->userTableView->selectionModel();
-    QModelIndexList selected = selections->selectedIndexes();
     foreach (QModelIndex index, selected)
     {
         model_->removeRow(index.row());
